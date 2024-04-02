@@ -1,0 +1,21 @@
+{
+  "name": "sql-structure",
+  "version": "1.0.0",
+  "description": "query, diagram",
+  "main": "index.js",
+  "scripts": {
+    "dev": "ts-node src/index.ts",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PGR",
+  "license": "ISC",
+  "dependencies": {
+    "@types/express": "^4.17.21",
+    "@types/mysql": "^2.15.26",
+    "express": "^4.19.2",
+    "mysql": "^2.18.1",
+    "mysql2": "^3.9.3",
+    "typescript": "^5.4.3"
+  }
+}
