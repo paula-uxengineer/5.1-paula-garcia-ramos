@@ -3,30 +3,30 @@ import mysql from 'mysql2';
 
 const app = express();
 
-// Configuració de la connexió a la base de dades
+// create connection to DB
 const connection = mysql.createConnection({
   host: 'localhost',
-  user: 'usuari',
-  password: 'contrasenya',
-  database: 'nom_de_la_base_de_dades'
+  user: 'root',
+  password: '123456789',
+  database: 'optical_store',
+  port: 3306 // port to connect with DB of MySQL
 });
 
-// Connexió a la base de dades
-connection.connect((err) => {
-  if (err) {
-    console.error('Error de connexió a la base de dades: ' + err.stack);
-    return;
-  }
-  console.log('Connexió a la base de dades correcta amb ID: ' + connection.threadId);
-});
 
-// Definició de rutes
+// Routes
 app.get('/', (req, res) => {
-  res.send('Hola món!');
+    res.send('Hello World');
 });
 
-// Iniciar el servidor
-const PORT = process.env.PORT || 3000;
+// Server port
+const PORT = process.env.PORT || 3000; // port:3000 is for the server; it should listen on a different port than the database
 app.listen(PORT, () => {
-  console.log(`Servidor escoltant al port ${PORT}`);
+    console.log(`Server listening at port ${PORT}`);
+    connection.connect((err) => {
+      if (err) {
+        console.error(`Error connecting to database: ${err}`);
+        return;
+      }
+      console.log('Database connected successfully');
+    });
 });
