@@ -11,10 +11,10 @@ CREATE TABLE suppliers (
     floor_number INT,
     door_number VARCHAR(10),
     city VARCHAR(40),
-    postal_code INT,
+    postal_code VARCHAR(10), 
     country VARCHAR(20),
-    phone INT,
-    fax INT,
+    phone VARCHAR(30), 
+    fax VARCHAR(30), 
     nif VARCHAR(20)
 );
 
@@ -42,11 +42,11 @@ CREATE TABLE glasses (
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(60),
-    postal_code INT,
-    phone INT,
+    postal_code VARCHAR(10), 
+    phone VARCHAR(20), 
     email VARCHAR(60),
     registration_date DATE,
-    referred_by INT,
+    referred_by INT NOT NULL,
     FOREIGN KEY (referred_by) REFERENCES customers(customer_id)
 );
 

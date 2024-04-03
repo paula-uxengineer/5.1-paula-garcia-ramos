@@ -1,4 +1,4 @@
-USE optica;
+USE optical_store;
 
 -- Total purchases per customer ---------------
 SELECT customers.customer_id,
