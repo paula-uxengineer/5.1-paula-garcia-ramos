@@ -1,5 +1,3 @@
-CREATE DATABASE IF NOT EXISTS optical_store;
-
 USE optical_store;
 
 -- suppliers_table ---------------
@@ -46,7 +44,7 @@ CREATE TABLE customers (
     phone VARCHAR(20), 
     email VARCHAR(60),
     registration_date DATE,
-    referred_by INT NOT NULL,
+    referred_by INT,
     FOREIGN KEY (referred_by) REFERENCES customers(customer_id)
 );
 
