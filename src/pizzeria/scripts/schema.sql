@@ -1,3 +1,7 @@
+CREATE DATABASE IF NOT EXISTS pizzeria;ç
+
+USE pizzeria;
+
 -- Customers table ---------------
 CREATE TABLE customers (
     customer_id INT AUTO_INCREMENT PRIMARY KEY,

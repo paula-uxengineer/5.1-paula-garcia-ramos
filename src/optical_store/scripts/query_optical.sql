@@ -1,34 +1,34 @@
 USE optical_store;
 
--- Total purchases per customer ---------------
-SELECT customers.customer_id,
+-- Total purchases for customer ---------------
+SELECT customers.id,
     customers.name,
-    COUNT(sales.sale_id) AS total_sales
+    COUNT(sales.id) AS total_sales
 FROM customers
-    LEFT JOIN sales ON customers.customer_id = sales.customer_id
-GROUP BY customers.customer_id,
+    LEFT JOIN sales ON customers.id = sales.id
+GROUP BY customers.id,
     customers.name
 ORDER BY total_sales DESC;
 
--- Total sales per employee/year ---------------
-SELECT employees.employee_id,
+-- Total sales for employee/year ---------------
+SELECT employees.id,
     employees.name AS Name,
-    COUNT(sales.sale_id) AS total_sales
+    COUNT(sales.id) AS total_sales
 FROM employees
-    JOIN sales ON employees.employee_id = sales.employee_id
-    JOIN glasses ON sales.glasses_id = glasses.glasses_id
-WHERE YEAR(sales.sale_date) = 2023
-GROUP BY employees.employee_id,
+    JOIN sales ON employees.id = sales.id
+    JOIN glasses ON sales.id = glasses.id
+WHERE YEAR(sales.sale_date) = 2024
+GROUP BY employees.id,
     employees.name
 ORDER BY total_sales DESC;
 
--- Total sales per supplier ---------------
-SELECT suppliers.supplier_id,
+-- Total sales for supplier ---------------
+SELECT suppliers.id,
     suppliers.name AS supplier,
-    COUNT(sales.sale_id) AS total_sales
+    COUNT(sales.id) AS total_sales
 FROM suppliers
-    JOIN glasses ON suppliers.supplier_id = glasses.supplier_id
-    JOIN sales ON glasses.glasses_id = sales.glasses_id
-GROUP BY suppliers.supplier_id,
+    JOIN glasses ON suppliers.id = glasses.id
+    JOIN sales ON glasses.id = sales.id
+GROUP BY suppliers.id,
     suppliers.name
 ORDER BY total_sales DESC;
