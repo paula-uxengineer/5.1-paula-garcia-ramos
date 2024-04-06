@@ -4,11 +4,9 @@
   "description": "query, diagram",
   "main": "index.js",
   "scripts": {
-    "lint": "eslint .",
-    "lint-fix": "eslint . --fix",
-    "prettier": "npx prettier --write .", 
-    "dev": "ts-node src/index.ts",
-    "build": "tsc",
+    "inserts-optical": "tsc && node dist/optical_store/scripts/inserts_optical.js",
+    "database-connection": "tsc && node dist/database.js",
+    "dev": "tsc && node dist/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "PGR",
@@ -16,19 +14,13 @@
   "dependencies": {
     "@types/express": "^4.17.21",
     "@types/mysql": "^2.15.26",
+    "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "mysql": "^2.18.1",
     "mysql2": "^3.9.3"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^6.21.0",
-    "eslint": "^8.57.0",
-    "eslint-config-prettier": "^9.1.0",
-    "eslint-config-standard-with-typescript": "^43.0.1",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-n": "^16.6.2",
-    "eslint-plugin-promise": "^6.1.1",
-    "prettier": "^3.2.5",
+    "@types/dotenv": "^8.2.0",
     "typescript": "^5.4.3"
   }
 }
