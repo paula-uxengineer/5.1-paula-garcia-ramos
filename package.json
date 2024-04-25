@@ -4,9 +4,11 @@
   "description": "query, diagram",
   "main": "index.js",
   "scripts": {
-    "inserts-optical": "tsc && node dist/optical_store/scripts/inserts_optical.js",
-    "database-connection": "tsc && node dist/optical_store/scripts/inserts_optical.js",
-    "dev": "tsc && node dist/index.js"
+    "start": "npm install && tsc",
+    "dev": "ts-node src/index.ts",
+    "docker": "docker compose up",
+    "inserts-optical": "node dist/optical_store/scripts/inserts_optical.js",
+    "database-connection": "node dist/optical_store/scripts/inserts_optical.js"
   },
   "author": "Paula Garcia Ramos",
   "license": "ISC",
