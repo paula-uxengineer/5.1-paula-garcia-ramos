@@ -1,8 +1,7 @@
-import mysql from 'mysql2';
 import poolOptical from '../connection_database';
 
-const connection = poolOptical.promise(); // allows make promises instead of callbacks
-// console.log(connection)
+const connection = poolOptical.promise(); 
+console.log(connection)
 
 async function executeInserts() {
   try {
@@ -78,7 +77,7 @@ async function executeInserts() {
 }
 
 // to check errors and see inserts
-poolOptical.query(`SHOW TABLES`, (err,res,fields) =>{
+poolOptical.query(`SHOW TABLES`, (err: Error,res: Response, fields: any) =>{
   console.error(err);
   console.info(res);
   console.info(fields);

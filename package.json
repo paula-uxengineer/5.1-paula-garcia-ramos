@@ -5,11 +5,10 @@
   "main": "index.js",
   "scripts": {
     "inserts-optical": "tsc && node dist/optical_store/scripts/inserts_optical.js",
-    "database-connection": "tsc && node dist/database.js",
-    "dev": "tsc && node dist/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "database-connection": "tsc && node dist/optical_store/scripts/inserts_optical.js",
+    "dev": "tsc && node dist/index.js"
   },
-  "author": "PGR",
+  "author": "Paula Garcia Ramos",
   "license": "ISC",
   "dependencies": {
     "@types/express": "^4.17.21",

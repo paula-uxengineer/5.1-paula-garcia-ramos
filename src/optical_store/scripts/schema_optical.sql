@@ -41,7 +41,7 @@ CREATE TABLE glasses (
 -- customers_table ---------------
 CREATE TABLE customers (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(60),
+    name VARCHAR(60) UNIQUE,
     postal_code VARCHAR(10), 
     phone VARCHAR(20), 
     email VARCHAR(60),
