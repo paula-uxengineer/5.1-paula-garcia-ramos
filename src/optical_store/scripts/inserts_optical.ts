@@ -1,5 +1,5 @@
-import mysql from 'mysql2';
-import poolOptical from '../connection_database';
+import mysql from "mysql2";
+import poolOptical from "../connection_database";
 
 const connection = poolOptical.promise(); // allows make promises instead of callbacks
 // console.log(connection)
@@ -7,7 +7,7 @@ const connection = poolOptical.promise(); // allows make promises instead of cal
 async function executeInserts() {
   try {
     // Inserts for suppliers_table
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
       INSERT INTO suppliers (name, street_address, street_number, floor_number, door_number, city, postal_code, country, phone, fax, nif)
       VALUES 
       ('LensCrafters', '123 Main Street', 1, 0, 'A', 'New York', 10001, 'USA', '1234567890', '0987654321', 'US123456'),
@@ -15,7 +15,7 @@ async function executeInserts() {
     `);
 
     // Inserts for brands_table
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
       INSERT INTO brands (name)
       VALUES 
         ('Ray-Ban'),
@@ -23,7 +23,7 @@ async function executeInserts() {
     `);
 
     // Inserts for customers_table
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
     INSERT INTO customers (name, postal_code, phone, email, registration_date, referred_by)
     VALUES 
       ('Mick Jagger', '10001', '555-123-4567', 'mick.jagger@example.com', '1986-06-01', null),
@@ -33,16 +33,15 @@ async function executeInserts() {
   `);
 
     // Inserts for employees_table
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
     INSERT INTO employees (name)
     VALUES 
       ('Ryuchi Sakamoto'),
       ('Ludovico Einaudi')
   `);
 
-
     // Insert for glasses_table - LensCrafters
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
       INSERT INTO glasses (brand_id, supplier_id, graduation, frame_type, frame_color, lens_color, price)
       SELECT 
           b.id, s.id, '1.0' AS graduation, 'Rimless' AS frame_type, 'Black' AS frame_color, 'Gray' AS lens_color, 150.00 AS price
@@ -51,7 +50,7 @@ async function executeInserts() {
     `);
 
     // Insert for glasses_table - Vision Express
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
       INSERT INTO glasses (brand_id, supplier_id, graduation, frame_type, frame_color, lens_color, price)
       SELECT 
           b.id, s.id, '1.5' AS graduation, 'Full Frame' AS frame_type, 'Brown' AS frame_color, 'Brown' AS lens_color, 200.00 AS price
@@ -60,28 +59,26 @@ async function executeInserts() {
     `);
 
     // Inserts for sales_table
-    await connection.execute(/*sql*/`
+    await connection.execute(/*sql*/ `
       INSERT INTO sales (fk_employee_id, fk_customer_id, fk_glasses_id, sale_date)
       VALUES 
         (1, 1, 1, '2024-04-01'),
         (2, 2, 2, '2024-04-02')
     `);
 
-    console.log('Inserts successfully executed.');
-
+    console.log("Inserts successfully executed.");
   } catch (error) {
-    console.error('Error executing inserts:', error);
-
+    console.error("Error executing inserts:", error);
   } finally {
     connection.end(); // close DB connection
   }
 }
 
 // to check errors and see inserts
-poolOptical.query(`SHOW TABLES`, (err,res,fields) =>{
+poolOptical.query(`SHOW TABLES`, (err, res, fields) => {
   console.error(err);
   console.info(res);
   console.info(fields);
-})
+});
 
 executeInserts();

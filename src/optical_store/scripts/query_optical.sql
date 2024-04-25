@@ -22,13 +22,19 @@ GROUP BY employees.id,
     employees.name
 ORDER BY total_sales DESC;
 
--- Total sales for supplier ---------------
+-- Total sales for supplier --------------- Lista a los diferentes proveedores que han suministrado gafas vendidas con éxito por la óptica.
+
 SELECT suppliers.id,
     suppliers.name AS supplier,
     COUNT(sales.id) AS total_sales
+
 FROM suppliers
     JOIN glasses ON suppliers.id = glasses.id
     JOIN sales ON glasses.id = sales.id
 GROUP BY suppliers.id,
     suppliers.name
-ORDER BY total_sales DESC;
+ORDER BY total_sales DESC
+WHERE total_sales > 0;
+
+-- Clientes sin compras
+-- Brands falta tener un supplier_id FK.
