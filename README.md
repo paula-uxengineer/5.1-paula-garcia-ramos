@@ -1,9 +1,9 @@
-# sql-structure
+# 5.1 - sql-structure
 >Development of database structures addressing concepts and practices related to MySQL for the design of "ER diagram" (Entity-Relationship diagram).
 
-## Getting started
+# Getting started
 
-### Inicialize the project
+## Inicialize the project
 1. Installs dependencies and compiles the TypeScript project.
 
 ```bash
@@ -17,7 +17,7 @@ npm run docker
 ```
 
 
-### Insert data from javascript to mysql
+## Insert data from javascript to mysql
 1. Install MySQL Server: 
 * Download and install MySQL Server from the official MySQL website (https://dev.mysql.com/downloads/mysql/).
 
@@ -55,9 +55,9 @@ export default poolOptical
 npm run inserts-optical
 ```
 
-## Schemas
+# Schemas
 
-### Level 1 - Optical Store
+## Level 1 - Optical Store
 
 The repository models the management of an optician. Here are the key points summarized:
 
@@ -71,13 +71,13 @@ The repository models the management of an optician. Here are the key points sum
 >[!NOTE]
 >To perform these verifications, you can find the query scripts in the directory src/optical_store/scripts. Refer to these scripts to verify that the design is correct.
 
-**Optics Verification Queries:** 
+### Optics Verification Queries:
 
 1. List the total purchases of a customer.
 2. List the different glasses sold by an employee during a year.
 3. List the different suppliers who have supplied glasses successfully sold for the optician.
 
-**Entity-Relationship diagram**
+### Entity-Relationship diagram
 <details>
 <summary>👀 see diagram</summary>
 
@@ -85,7 +85,7 @@ The repository models the management of an optician. Here are the key points sum
 </details>
 <br>
 
-### Level 1 - Pizzeria
+## Level 1 - Pizzeria
 
 | **Entities** | **Atributes**                                                                                                                 |
 | -------------| ----------------------------------------------------------------------------------------------------------------------------- |
@@ -97,13 +97,13 @@ The repository models the management of an optician. Here are the key points sum
 >[!NOTE] 
 >To perform these verifications, you can find the query scripts in the directory src/pizzeria/scripts. Refer to these scripts to verify that the design is correct.
 
-**Pizzeria Verification Queries:**
+### Pizzeria Verification Queries:
 
 1. List how many "Drinks" products have been sold in a specific location.
 2. List how many orders a specific employee has made.
 
 
-**Entity-Relationship diagram**
+### Entity-Relationship diagram
 
 <details>
 <summary>👀 see diagram</summary>
@@ -112,7 +112,7 @@ The repository models the management of an optician. Here are the key points sum
 </details>
 <br>
 
-### Level 2 - YouTube
+## Level 2 - YouTube
 
 This level represents a reduced version of YouTube with the following features:
 
@@ -126,7 +126,7 @@ This level represents a reduced version of YouTube with the following features:
 >[!NOTE] 
 >To perform these verifications, you can find the query scripts in the directory src/youtube/scripts. Refer to these scripts to verify that the design is correct.
 
-**Entity-Relationship diagram**
+### Entity-Relationship diagram
 
 <details>
 <summary>👀 see diagram</summary>
@@ -135,7 +135,7 @@ This level represents a reduced version of YouTube with the following features:
 </details>
 <br>
 
-### Level 3 - Spotify
+## Level 3 - Spotify
 
 This level represents a reduced version of Spotify with the following features:
 
@@ -151,7 +151,7 @@ This level represents a reduced version of Spotify with the following features:
 >To perform these verifications, you can find the query scripts in the directory src/spotify/scripts. Refer to these scripts to verify that the design is correct.
 
 
-**Entity-Relationship diagram**
+### Entity-Relationship diagram
 
 <details>
 <summary>👀 see diagram</summary>
